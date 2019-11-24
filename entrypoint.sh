@@ -11,7 +11,7 @@ echo "Branch is $2"
 echo "Message is is $3"
 
 # If the access token is not set, notify and return
-if [ -n ${ACCESS_TOKEN} ]
+if [ -n ${ACCESS_TOKEN} ]; then
     echo "There is no ACCESS_TOKEN set"
     exit 1
 fi

@@ -3,19 +3,19 @@
 # Exit automatically when an error happens
 set -e
 # Change the directory to the one that we need
-cd $1
+cd $2
 
 # If the access token is not set, notify and return
-if [ -z "$ACCESS_TOKEN" ]; then
-    echo "ERROR: There is no ACCESS_TOKEN set for pushing the branch"
+if [ -z "$1" ]; then
+    echo "ERROR: There is no token set for pushing the branch"
     exit 1
 fi
 
 # Initialize the GitHub repository
 git init
 # Set the name and email to GitHub Actions
-git config user.name "$4"
-git config user.email "$5"
+git config user.name "$5"
+git config user.email "$6"
 
 # If there is nothing to commit, notify and return
 if [ -z "$(git status --porcelain)" ]; then
@@ -26,9 +26,9 @@ fi
 # Otherwise, add all of the files
 git add .
 # Create the commit
-git commit -m "$3"
+git commit -m "$4"
 # Force push into the repo
-git push --force "https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "master:$2"
+git push --force "https://$1@github.com/${GITHUB_REPOSITORY}.git" "master:$3"
 
 # Finally, as a cleanup remove the git folder
 rm -fr .git

@@ -12,7 +12,7 @@ echo "Message is is $3"
 
 # If the access token is not set, notify and return
 if [ -n ${ACCESS_TOKEN} ]; then
-    echo "There is no ACCESS_TOKEN set"
+    echo "ERROR: There is no ACCESS_TOKEN set for pushing the branch"
     exit 1
 fi
 

@@ -9,7 +9,7 @@ inputs:
   folder:
     description: "The folder that should be pushed"
     required: false
-    default: "."
+    default: "site"
   branch:
     description: "The branch where we should push"
     required: false

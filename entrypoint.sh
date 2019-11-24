@@ -5,14 +5,6 @@ set -e
 # Change the directory to the one that we need
 cd $1
 
-# Show some basic information
-echo "Source Folder is $1"
-echo "Target Branch is $2"
-echo "Commit Message is $3"
-echo "Author Name is $4"
-echo "Author Email is $5"
-echo ""
-
 # If the access token is not set, notify and return
 if [ -z "$ACCESS_TOKEN" ]; then
     echo "ERROR: There is no ACCESS_TOKEN set for pushing the branch"

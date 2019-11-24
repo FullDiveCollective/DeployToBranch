@@ -5,6 +5,11 @@ set -e
 # Change the directory to the one that we need
 cd $1
 
+# Show some basic information
+echo "Folder is $1"
+echo "Branch is $2"
+echo "Message is is $3"
+
 # Initialize the GitHub repository
 git init
 # Set the name and email to GitHub Actions

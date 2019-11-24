@@ -5,7 +5,8 @@ icon: "git-commit"
 inputs:
   folder:
     description: "The folder that should be pushed"
-    required: true
+    required: false
+    default: "."
   branch:
     description: "The branch where we should push"
     required: false

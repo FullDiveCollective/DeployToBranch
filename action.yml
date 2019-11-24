@@ -15,6 +15,14 @@ inputs:
     description: "The message or title of the commit"
     required: false
     default: "Deployment from GitHub Actions"
+  name:
+    description: "The name of the user that authored the commit"
+    required: false
+    default: "GitHub Actions"
+  email:
+    description: "The email of the user that authored the commit"
+    required: false
+    default: "actions@github.com"
 
 runs:
   using: "docker"
@@ -23,3 +31,5 @@ runs:
     - ${{ inputs.folder }}
     - ${{ inputs.branch }}
     - ${{ inputs.message }}
+    - ${{ inputs.name }}
+    - ${{ inputs.email }}

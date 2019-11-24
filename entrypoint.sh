@@ -19,8 +19,8 @@ fi
 # Initialize the GitHub repository
 git init
 # Set the name and email to GitHub Actions
-git config user.name "GitHub Actions"
-git config user.email "actions@github.com"
+git config user.name "$4"
+git config user.email "$5"
 
 # If there is nothing to commit, notify and return
 if [ -z "$(git status --porcelain)" ]; then

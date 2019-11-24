@@ -15,6 +15,7 @@ git config user.email "actions@github.com"
 if [ -z "$(git status --porcelain)" ]; then
     echo "There are no files to commit"
     exit 0
+fi
 
 # Otherwise, add all of the files
 git add .

@@ -1,0 +1,24 @@
+name: "Deploy to Branch"
+description: "Deploys a specified folder into a choosen branch of the same repo"
+icon: "git-commit"
+
+inputs:
+  folder:
+    description: "The folder that should be pushed"
+    required: true
+  branch:
+    description: "The branch where we should push"
+    required: false
+    default: "gh-pages"
+  message:
+    description: "The message or title of the commit"
+    required: false
+    default: "Deployment from GitHub Actions"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.folder }}
+    - ${{ inputs.branch }}
+    - ${{ inputs.message }}
